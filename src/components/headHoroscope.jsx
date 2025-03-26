@@ -1,26 +1,24 @@
-import useHoroscopeStore from "../storeHoroscope"
 import '../css/Headhoroscope.css'
+import useHoroscopeStore from "../storeHoroscope"
 
 function HeadHoroscope(){
 
 
-   const { horoscope, currentIndex , currentIndexNext , nextCurrentIndex , next , previous , currentIndexPrevious , previousCurrentIndex } = useHoroscopeStore()
+   const { horoscope  , next , previous , previousCurrentIndex , nextCurrentIndex } = useHoroscopeStore()
 
 
    function preventDefaultNext(e){
       e.preventDefault()
-      console.log('next')
-      console.log(currentIndex)
       next()
+      previousCurrentIndex()
       nextCurrentIndex()
    }
 
    function preventDefaultPrevious(e){
       e.preventDefault()
-      console.log('previous')
-      console.log(currentIndex)
       previous()
       previousCurrentIndex()
+      nextCurrentIndex()
    }
 
 
@@ -28,12 +26,12 @@ function HeadHoroscope(){
 
       <div id="headHoroscope">
          <a href="#" onClick={preventDefaultPrevious}>
-            <p>{horoscope[currentIndexPrevious].nom}</p>
-            <p>{horoscope[currentIndexPrevious].dates}</p>
+            <p className="nom_signe uppercase">{horoscope[previousCurrentIndex()]?.nom}</p>
+            <p className="date_signe uppercase">{horoscope[previousCurrentIndex()]?.dates}</p>
          </a>
          <a href="#" onClick={preventDefaultNext}>
-            <p>{horoscope[currentIndexNext].nom}</p>
-            <p>{horoscope[currentIndexNext].dates}</p>
+            <p className="nom_signe uppercase">{horoscope[nextCurrentIndex()]?.nom}</p>
+            <p className="date_signe uppercase">{horoscope[nextCurrentIndex()]?.dates}</p>
          </a>
       </div>
 

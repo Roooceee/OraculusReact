@@ -1,27 +1,27 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import useHoroscopeStore from "../storeHoroscope"
 import '../css/SlideBar.css'
+import { ChevronLeft } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 function SlideBar(){
 
 
-   const { currentIndex , next , previous} = useHoroscopeStore()
+   const { next , previous , previousCurrentIndex , nextCurrentIndex } = useHoroscopeStore()
 
 
    function preventDefaultNext(e){
       e.preventDefault()
-      console.log('next')
-      console.log(currentIndex)
       next()
+      previousCurrentIndex()
       nextCurrentIndex()
    }
 
    function preventDefaultPrevious(e){
       e.preventDefault()
-      console.log('previous')
-      console.log(currentIndex)
       previous()
       previousCurrentIndex()
+      nextCurrentIndex()
    }
 
    return (
@@ -29,18 +29,18 @@ function SlideBar(){
          <a href="#"><img className="logo" src="/img/logo.png" alt="Logo Oraculus"/></a>
          <nav>
             <ul>
-               <Link to='/'>Horoscope</Link>
-               <Link to='/propos'>A Propos</Link>
-               <Link to='/contact'>Contact</Link>
+               <NavLink to='/' className="uppercase">Horoscope</NavLink>
+               <NavLink to='/propos' className="uppercase">A Propos</NavLink>
+               <NavLink to='/contact' className="uppercase">Contact</NavLink>
             </ul>
          </nav>
 
          <div>
             <div>
-               <a href="#" onClick={preventDefaultPrevious}>Precedent</a>
+               <a href="#" onClick={preventDefaultPrevious}><ChevronLeft size={48} strokeWidth={1} /></a>
             </div>
             <div>
-               <a href="#" onClick={preventDefaultNext}>Suivant</a>
+               <a href="#" onClick={preventDefaultNext}><ChevronRight size={48} strokeWidth={1} /></a>
             </div>
          </div>
       </header>

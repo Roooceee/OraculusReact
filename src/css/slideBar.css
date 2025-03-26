@@ -1,5 +1,6 @@
 header {
-   height: 100dvh;
+   min-height: 100dvh;
+   height: 100%;
    max-width: 300px;
    border-right: 1px solid #BFBFBF;
    display: flex;
@@ -16,8 +17,20 @@ header nav ul {
    margin: auto;
 }
 
+.active {
+   color: black;
+}
+
 header nav ul a {
    text-align: center;
+   font-size: 16px;
+   font-family: var(--font);
+   color: var(--color-grey);
+   font-weight: 100;
+}
+
+header div a {
+   color: var(--color-grey-second)
 }
 
 header>div {

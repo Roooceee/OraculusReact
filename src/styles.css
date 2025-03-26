@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
    margin: 0;
 }
@@ -19,3 +20,20 @@ img {
    grid-template-columns: 20% 80%;
 }
 
+
+.uppercase {
+   text-transform: uppercase;
+}
+
+.date_signe {
+   font-family: var(--font);
+   color: var(--color-grey);
+}
+
+:root {
+   --font : 'Roboto';
+   --font-second : 'Roboto Condensed';
+   --color-grey : #909090;
+   --color-grey-second : #BFBFBF;
+   --color-grey-third : #908F8F;
+}
