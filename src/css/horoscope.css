@@ -1,0 +1,48 @@
+#horoscope {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   gap: 50px;
+   padding-left: 32px;
+}
+
+#predictions {
+   display: grid;
+}
+
+#img_signe {
+   max-width: 360px;
+   padding-top: 140px;
+}
+
+.subtitle {
+   color: #3F3F3F;;
+}
+
+aside {
+   height: 100vh;
+   min-height: 100%;
+   background: url(../img/background.png) no-repeat 90px center / cover;
+   display: flex;
+   align-items: center;
+}
+
+#datejour {
+   font-size: 16px;
+   color: var(--color1);
+   margin: 0;
+   padding: 0;
+}
+
+#horoscope h1 {
+   font-size: 42px;
+   letter-spacing: 5px;
+   padding-bottom: 20px;
+   font-family: var(--font1)
+}
+
+#horoscope p {
+   font-size: 14px;
+   color: var(--color2);
+   padding-bottom: 10px;
+}

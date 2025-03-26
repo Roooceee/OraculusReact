@@ -1,0 +1,42 @@
+header {
+   height: 100dvh;
+   max-width: 300px;
+   border-right: 1px solid #BFBFBF;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+header nav ul {
+   height: 258px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 50px;
+   margin: auto;
+}
+
+header nav ul a {
+   text-align: center;
+}
+
+header>div {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   border-top: 1px solid #BFBFBF;
+   height: 100px;
+}
+
+header>div>div {
+   display: grid;
+}
+
+#root > header > div > div:nth-child(1) {
+   border-right: 1px solid #BFBFBF;
+}
+
+header>div a {
+   text-align: center;
+   margin: auto;
+}
+

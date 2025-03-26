@@ -1,0 +1,21 @@
+* {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+img {
+   max-width: 100%;
+}
+
+#root {
+   display: grid;
+   grid-template-columns: 20% 80%;
+}
+
