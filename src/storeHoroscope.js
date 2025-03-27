@@ -9,7 +9,7 @@ const useHoroscopeStore = create((set, get)=>({
       fetchDatas : async () => {
 
         try {
-          const req = await fetch('public/datas/horoscope.json')
+          const req = await fetch('https://raw.githubusercontent.com/Roooceee/Oraculus_react/refs/heads/main/public/datas/horoscope.json')
           const res = await req.json()
           console.log(res)
           set({ horoscope: res});
