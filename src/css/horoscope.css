@@ -1,7 +1,6 @@
 #horoscope {
    display: grid;
    grid-template-columns: 60% auto;
-   align-items: center;
    gap: 50px;
    padding-left: 80px;
 }
