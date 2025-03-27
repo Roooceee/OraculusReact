@@ -1,7 +1,6 @@
 #contactContent {
    display: grid;
    grid-template-columns: 60% auto;
-   align-items: center;
    gap: 50px;
    padding-left: 80px;
 }
@@ -43,7 +42,7 @@
 
 #contactContent form input[type='submit']{
    height: 47px;
-   color: var(--color);
+   color: var(--color-grey-second);
    background-color: white;
    border: 1px solid var(--color-grey-second);
 }
