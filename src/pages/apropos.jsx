@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import Aproposcontent from "../components/aproposContent"
+import Aproposcontent from "../components/aProposContent"
 import SideBar from "../components/sideBar"
 
 function Apropos(){
