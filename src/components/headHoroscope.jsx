@@ -1,4 +1,4 @@
-import '../css/Headhoroscope.css'
+import '../css/headHoroscope.css'
 import useHoroscopeStore from "../storeHoroscope"
 
 function HeadHoroscope(){
