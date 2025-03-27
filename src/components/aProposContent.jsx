@@ -1,5 +1,5 @@
-import Aside from "../components/aside"
 import '../css/aProposContent.css'
+import Aside from "./aside"
 
 function Aproposcontent() {
 
