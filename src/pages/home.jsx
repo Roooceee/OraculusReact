@@ -1,5 +1,5 @@
 import Horoscope from "../components/horoscope"
-import SlideBar from "../components/slideBar"
+import SideBar from "../components/sideBar"
 import '../styles.css'
 import { useEffect } from "react";
 import useHoroscopeStore from "../storeHoroscope";
@@ -12,18 +12,11 @@ function Home() {
     fetchDatas();
   }, []);
 
-  // Écoute les changements de `horoscope`
-  useEffect(() => {
-    if (horoscope) {
-      console.log("Données mises à jour :", horoscope);
-    }
-  }, [horoscope]);
-
   return (
       <>
         {horoscope.length < 0 ? <p>Chargement</p> : 
         <>      
-        <SlideBar/>
+        <SideBar/>
         <Horoscope/>
         </>
         }

@@ -1,9 +1,9 @@
 #horoscope {
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 60% auto;
    align-items: center;
    gap: 50px;
-   padding-left: 32px;
+   padding-left: 80px;
 }
 
 #text_horoscope {
@@ -24,14 +24,6 @@
    color: #3F3F3F;;
 }
 
-aside {
-   height: 100vh;
-   min-height: 100%;
-   background: url(../img/background.png) no-repeat 90px center / cover;
-   display: flex;
-   align-items: center;
-}
-
 #datejour {
    font-size: 16px;
    font-family: var(--font);
@@ -41,13 +33,6 @@ aside {
 #horoscope>.nom_signe {
    font-family: var(--font);
    color: var(--color-grey);
-}
-
-
-#horoscope h1 {
-   font-size: 42px;
-   font-family: var(--font-second);
-   font-weight: 400;
 }
 
 #predictions {

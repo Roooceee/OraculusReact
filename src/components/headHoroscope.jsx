@@ -10,15 +10,11 @@ function HeadHoroscope(){
    function preventDefaultNext(e){
       e.preventDefault()
       next()
-      previousCurrentIndex()
-      nextCurrentIndex()
    }
 
    function preventDefaultPrevious(e){
       e.preventDefault()
       previous()
-      previousCurrentIndex()
-      nextCurrentIndex()
    }
 
 

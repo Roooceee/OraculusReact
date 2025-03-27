@@ -1,6 +1,7 @@
 import HeadHoroscope from "../components/headHoroscope"
 import '../css/horoscope.css'
 import useHoroscopeStore from "../storeHoroscope"
+import Aside from "./aside"
 
 function Horoscope(){
 
@@ -40,10 +41,7 @@ function Horoscope(){
                   </div>
                </div>
             </article>
-               <aside>
-                  <img id="img_signe" src={horoscope[currentIndex]?.imageURL} alt={horoscope[currentIndex]?.nom}/>
-                  {/* Optional shining operator via ? ici : {horoscope[currentIndex]?.nom} */}
-               </aside>
+            <Aside/>
          </div>
    )
 

@@ -3,10 +3,6 @@
    margin: 0;
 }
 
-ul {
-   padding: 0;
-}
-
 a {
    text-decoration: none;
 }
@@ -17,7 +13,7 @@ img {
 
 #root {
    display: grid;
-   grid-template-columns: 20% 80%;
+   grid-template-columns: 300px auto;
 }
 
 
@@ -36,4 +32,11 @@ img {
    --color-grey : #909090;
    --color-grey-second : #BFBFBF;
    --color-grey-third : #908F8F;
+}
+
+h1 {
+   font-size: 42px;
+   letter-spacing: 5px;
+   padding-bottom: 20px;
+   font-family: var(--font-second);
 }

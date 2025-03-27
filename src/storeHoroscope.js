@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { create } from 'zustand';
 
    // use + nom du store 
@@ -38,8 +37,6 @@ const useHoroscopeStore = create((set, get)=>({
         const {currentIndex, horoscope} = get()
          return currentIndex <= 0 ? horoscope.length-1 : currentIndex-1
       }
-
-
    }))
  
 

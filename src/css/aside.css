@@ -1,0 +1,6 @@
+aside {
+   min-height: 100dvh;
+   background: url(../img/background.png) no-repeat 90px center / cover;
+   display: flex;
+   align-items: center;
+}
