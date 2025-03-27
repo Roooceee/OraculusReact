@@ -9,6 +9,7 @@ function Home() {
   const {fetchDatas , horoscope} = useHoroscopeStore()
 
   useEffect(() => {
+    document.title = 'Oraculus - Horoscope'
     fetchDatas();
   }, []);
 
