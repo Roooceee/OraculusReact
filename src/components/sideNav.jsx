@@ -16,20 +16,11 @@ function SideNav(){
       setIsOpen(prev=>!prev)  
    }
 
-   const handleLinkClick = () => {
-      setIsOpen(false)
-   }
-
    function changeDefaultCurrentIndex(e,index){
       e.preventDefault()
+      setIsOpen(false)
       changeCurrentIndex(index)
    }
-
-   useEffect(()=>{
-
-      handleLinkClick()
-
-   },[currentIndex])
 
    return (
       <header className={isOpen ? 'open' : 'close'}>
