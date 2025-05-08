@@ -17,12 +17,11 @@ function SideNav(){
    }
 
    const handleLinkClick = () => {
-      setIsOpen(prev => !prev)
+      setIsOpen(false)
    }
 
    function changeDefaultCurrentIndex(e,index){
       e.preventDefault()
-      console.log(index)
       changeCurrentIndex(index)
    }
 
