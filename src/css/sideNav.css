@@ -1,0 +1,91 @@
+header {
+   height: 100dvh;
+   max-height: 100dvh;
+   overflow-y: auto;
+   border-right: 1px solid #BFBFBF;
+   border-bottom: 1px solid #BFBFBF;
+   max-width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+header .burger-menu {
+   display: none;
+}
+
+header nav {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100dvh;
+}
+
+header nav ul {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   padding: 0;
+}
+
+header nav ul li {
+   list-style: none;
+   padding: 0;
+   text-align: center;
+   font-size: 16px;
+   font-family: var(--font);
+   color: var(--color-grey);
+   font-weight: 100;
+}
+
+header nav ul a {
+   text-align: center;
+   font-size: 16px;
+   font-family: var(--font);
+   color: var(--color-grey);
+   font-weight: 100;
+}
+
+header nav ul li a.active {
+   color: var(--color-black);
+   font-weight: 700;
+}
+
+header div a {
+   color: var(--color-grey-second)
+}
+
+@media (max-width:767px) {
+
+   header {
+      max-width: fit-content;
+   }
+
+   header.open {
+      width: 300px;
+   }
+
+   header .burger-menu {
+      z-index: 2;
+      display: flex;
+      color: #365DE6;
+   }
+
+   header nav.close {
+      display: none;
+   }
+
+   header nav.open {
+      width: 300px;
+      display: flex;
+      position: fixed;
+      z-index: 1;
+      background-color: #365DE6;
+      /* couleur a changer et a mettre en variable */
+   }
+
+
+}
+
+

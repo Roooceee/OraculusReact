@@ -1,5 +1,5 @@
 import Horoscope from "../components/horoscope"
-import SideBar from "../components/sideBar"
+import SideNav from "../components/sideNav"
 import '../styles.css'
 import { useEffect } from "react";
 import useHoroscopeStore from "../storeHoroscope";
@@ -17,8 +17,10 @@ function Home() {
       <>
         {horoscope.length < 0 ? <p>Chargement</p> : 
         <>      
-        <SideBar/>
-        <Horoscope/>
+        <SideNav/>
+        <main>
+          <Horoscope/>
+        </main>
         </>
         }
       </>

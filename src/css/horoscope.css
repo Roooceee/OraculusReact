@@ -1,45 +1,110 @@
 #horoscope {
+   padding: 0px 0px 0px 50px;
+}
+
+#horoscope-body {
+   min-height: 110svh;
    display: grid;
    grid-template-columns: 60% auto;
-   gap: 50px;
-   padding-left: 80px;
+   align-items: center;
 }
 
-#text_horoscope {
-   min-height: 500px;
-   min-width: 680px;
+#text-horoscope {
+   padding-top: 100px;
 }
 
-#predictions {
+#img-signe-head {
+   display: none;
+}
+
+#nom-signe {
+   padding-bottom: 0;
+}
+
+#horoscope #horoscope-body aside {
    display: grid;
+   background-image: url(/img/background.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 720px;
+   height: 100%;
 }
 
-#img_signe {
-   max-width: 360px;
-   padding-top: 140px;
+#img-signe {
+   margin: auto 0;
+   max-width: 80%;
 }
 
-.subtitle {
-   color: #3F3F3F;;
-}
-
-#datejour {
+#date {
    font-size: 16px;
    font-family: var(--font);
    font-weight: 400;
 }
 
-#horoscope>.nom_signe {
-   font-family: var(--font);
-   color: var(--color-grey);
-}
-
 #predictions {
    display: grid;
-   gap: 10px   ;
-   padding-top: 50px;
+   gap: 10px;
+   padding-top: 30px;
    font-family: var(--font);
    font-size: 14px;
    font-weight: 400;
    color: var(--color-grey-third);
+}
+
+@media (max-width:1300px) {
+   #horoscope #horoscope-body aside {
+      background-image: none;
+   }
+}
+
+@media (max-width:1025px) {
+
+   #horoscope {
+      padding: 0px 0px 0px 50px;
+   }
+
+   #horoscope-body {
+      grid-template-columns: 1fr;
+   }
+
+   #horoscope #horoscope-body aside {
+      display: none;
+   }
+
+   #img-signe {
+      margin: 0;
+   }
+
+   #img-signe-head {
+      display: block;
+      max-width: 200px;
+   }
+
+   #text-horoscope > div:nth-child(1) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 450px;
+   }
+}
+
+@media (max-width:768px) {
+
+   #horoscope {
+      padding: 0px 0px 0px 20px;
+   }
+
+   #text-horoscope {
+      padding-top: 50px;
+   }
+
+   #text-horoscope > div:nth-child(1) {
+      margin: auto;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      text-align: center;
+   }
+
 }

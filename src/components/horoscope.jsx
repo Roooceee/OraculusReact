@@ -1,7 +1,7 @@
-import HeadHoroscope from "../components/headHoroscope"
+import NextPrevSignNav from '../components/nextPrevSignNav'
+import ParseTextWithBreaks from '../components/parseTextWithBreaks'
 import '../css/horoscope.css'
 import useHoroscopeStore from "../storeHoroscope"
-import Aside from "./aside"
 
 function Horoscope(){
 
@@ -17,32 +17,73 @@ function Horoscope(){
       date = date < 10 ? '0'+date : date
 
       return date+'/'+month+'/'+dateToday.getFullYear()
+
    }
-
-
+   
    return (
-
-      <div id="horoscope">
-            <article id="horoscope_body">
-               <HeadHoroscope/>
-               <div id="text_horoscope">
-                  <h2 id="datejour" className="uppercase">-- Horoscope du : {dateTodayFormatFr()}</h2>
-                  <h1 className="uppercase">{horoscope[currentIndex]?.nom}</h1>  
-                  <p className="uppercase date_signe">{horoscope[currentIndex]?.dates}</p>
+      
+      <>
+      {horoscope.length > 0 ? 
+               <div id="horoscope">
+            <NextPrevSignNav/>
+            <article id="horoscope-body">
+               <div id="text-horoscope">
+                  <div>
+                     <div>
+                        <h2 id="date" className="uppercase">Horoscope du : {dateTodayFormatFr()}</h2>
+                        <h1 className="uppercase" id="nom-signe">{horoscope[currentIndex]?.nom}</h1>  
+                        <p className="uppercase date-signe">{horoscope[currentIndex]?.dates}</p>
+                     </div>
+                     <img id="img-signe-head" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
+                  </div>
 
                   <div id="predictions">
-                     <p><span className="subtitle">Amour : </span> {horoscope[currentIndex]?.amour}</p>
-                     <p><span className="subtitle">Travail : </span>{horoscope[currentIndex]?.travail}</p>
-                     <p><span className="subtitle">Argent : </span>{horoscope[currentIndex]?.argent}</p>
-                     <p><span className="subtitle">Santé : </span>{horoscope[currentIndex]?.sante}</p>
-                     <p><span className="subtitle">Amour : </span>{horoscope[currentIndex]?.amour}</p>
-                     <p><span className="subtitle">Fammilles et Amis : </span>{horoscope[currentIndex]?.famille_et_amis}</p>
-                     <p><span className="subtitle">Conseils : </span>{horoscope[currentIndex]?.conseil}</p>
+                     <div>
+                        <h3 className="font-bold">Amour : </h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.amour}/>
+                        </p>
+                     </div>
+                     <div>
+                        <h3 className="font-bold">Travail : </h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.travail}/>
+                        </p>
+                     </div>
+                     <div>
+                        <h3 className="font-bold">Argent :</h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.argent}/>
+                        </p>
+                     </div>
+                     <div>
+                        <h3 className="font-bold">Santé :</h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.sante}/>
+                        </p>
+                     </div>
+                     <div>
+                        <h3 className="font-bold">Famille et Amis :</h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.famille_et_amis}/>
+                        </p>
+                     </div>
+                     <div>
+                        <h3 className="font-bold">Conseils :</h3>
+                        <p>
+                           <ParseTextWithBreaks text={horoscope[currentIndex]?.conseil}/>
+                        </p>
+                     </div>
                   </div>
                </div>
+               <aside>
+                  <img id="img-signe" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
+               </aside>
             </article>
-            <Aside/>
          </div>
+      :''}
+      </>
+
    )
 
 }

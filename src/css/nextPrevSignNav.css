@@ -1,0 +1,46 @@
+#next-prev-sign-nav {
+   position: absolute;
+   display: flex;
+   justify-content: flex-start;
+   gap: 20px;
+   padding: 20px 0px 0px 0px;
+}
+
+#next-prev-sign-nav a {
+   text-decoration: none;
+   min-width: 230px;
+}
+
+#next-prev-sign-nav>a>.nom-signe {
+   padding-top: 20px;
+   border-top: 2px solid var(--color-grey-second);
+   font-family: var(--font);
+   font-size: 18px;
+   color: var(--color-black);
+}
+
+.active {
+   color: var(--color-black);
+}
+
+@media (max-width:769px){
+
+   #next-prev-sign-nav {
+      position: relative;
+      justify-content: space-around;
+      text-align: center;
+   }
+
+   #next-prev-sign-nav a {
+      min-width: fit-content;
+   }
+
+   #next-prev-sign-nav>a>.nom-signe {
+      font-size: 14px;
+   }
+
+   #next-prev-sign-nav>a>.date-signe {
+      font-size: 12px;
+   }
+   
+}

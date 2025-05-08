@@ -1,19 +1,19 @@
-#carrousselNavigation {
+#carroussel-navigation {
    display: grid;
    grid-template-columns: 1fr 1fr;
    border-top: 1px solid #BFBFBF;
    height: 100px;
 }
 
-#carrousselNavigation>div {
+#carroussel-navigation>div {
    display: grid;
 }
 
-#carrousselNavigation > div:nth-child(1) {
+#carroussel-navigation > div:nth-child(1) {
    border-right: 1px solid #BFBFBF;
 }
 
-#carrousselNavigation>div a {
+#carroussel-navigation>div a {
    display: inline-block;
    text-align: center;
    margin: auto;

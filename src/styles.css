@@ -16,12 +16,19 @@ img {
    grid-template-columns: 300px auto;
 }
 
+main {
+   max-width: 100%;
+}
 
 .uppercase {
    text-transform: uppercase;
 }
 
-.date_signe {
+.font-bold {
+   color: var(--color-grey-fourth);
+}
+
+.date-signe {
    font-family: var(--font);
    color: var(--color-grey);
 }
@@ -29,9 +36,11 @@ img {
 :root {
    --font : 'Roboto';
    --font-second : 'Roboto Condensed';
+   --color-black: black;
    --color-grey : #909090;
    --color-grey-second : #BFBFBF;
    --color-grey-third : #908F8F;
+   --color-grey-fourth : #3F3F3F ; 
 }
 
 h1 {
@@ -39,4 +48,12 @@ h1 {
    letter-spacing: 5px;
    padding-bottom: 20px;
    font-family: var(--font-second);
+}
+
+@media (max-width:767px) {
+
+   #root {
+      display: grid;
+      grid-template-columns: auto auto;
+   }
 }

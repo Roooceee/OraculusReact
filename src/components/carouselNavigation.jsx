@@ -5,7 +5,6 @@ import '../css/carrousselNavigation.css'
 
 function CarrousselNavigation(){
 
-
    const { next , previous } = useHoroscopeStore()
 
 
@@ -22,7 +21,7 @@ function CarrousselNavigation(){
    return (
 
 
-      <div id='carrousselNavigation'>
+      <div id='carroussel-navigation'>
          <div>
             <a href="#" onClick={preventDefaultPrevious}><ChevronLeft size={48} strokeWidth={1} /></a>
          </div>

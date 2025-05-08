@@ -4,14 +4,13 @@ import { create } from 'zustand';
 const useHoroscopeStore = create((set, get)=>({
 
       horoscope: [],
-      currentIndex: 1,
+      currentIndex: 0,
 
       fetchDatas : async () => {
 
         try {
           const req = await fetch('https://raw.githubusercontent.com/Roooceee/Oraculus_react/refs/heads/main/public/datas/horoscope.json')
           const res = await req.json()
-          console.log(res)
           set({ horoscope: res});
         }
         catch(e){
@@ -19,6 +18,9 @@ const useHoroscopeStore = create((set, get)=>({
         }
       },
 
+      changeCurrentIndex: (pIndex) => set((state) => ({
+         currentIndex : pIndex >= 0 && pIndex <= state.horoscope.length-1 ? pIndex : 0
+      })),
 
       next: () => set((state)=> ({
          currentIndex : state.currentIndex >= state.horoscope.length - 1 ? 0 : state.currentIndex+1
