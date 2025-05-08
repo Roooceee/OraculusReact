@@ -60,6 +60,8 @@ header div a {
 
    header {
       max-width: fit-content;
+      position: fixed;
+      background-color: #365DE6;
    }
 
    header.open {
@@ -67,6 +69,7 @@ header div a {
    }
 
    header .burger-menu {
+      position: fixed;
       z-index: 2;
       display: flex;
       color: #365DE6;
@@ -77,11 +80,8 @@ header div a {
    }
 
    header nav.open {
-      width: 300px;
       display: flex;
-      position: fixed;
       z-index: 1;
-      background-color: #365DE6;
       /* couleur a changer et a mettre en variable */
    }
 

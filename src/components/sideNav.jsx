@@ -3,7 +3,7 @@ import '../css/sideNav.css'
 import CarrousselNavigation from "./carouselNavigation"
 import useHoroscopeStore from "../storeHoroscope"
 import { Menu, SquareX } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function SideNav(){
 
@@ -25,6 +25,13 @@ function SideNav(){
       console.log(index)
       changeCurrentIndex(index)
    }
+
+   useEffect(()=>{
+
+      handleLinkClick()
+
+   },[currentIndex])
+
    return (
       <header className={isOpen ? 'open' : 'close'}>
          <span className="burger-menu" onClick={toggleMenu}>{!isOpen ? <Menu /> : <SquareX/>}</span>
@@ -37,7 +44,6 @@ function SideNav(){
                               <a href="#" 
                               onClick={(e)=> {
                                  changeDefaultCurrentIndex(e,index);
-                                 toggleMenu();
                               }}
                               className={currentIndex===index ?'active' :''}>
                                  {e.nom}

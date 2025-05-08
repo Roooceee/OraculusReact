@@ -26,7 +26,7 @@
 @media (max-width:769px){
 
    #next-prev-sign-nav {
-      position: relative;
+      position: static;
       justify-content: space-around;
       text-align: center;
    }
@@ -36,11 +36,11 @@
    }
 
    #next-prev-sign-nav>a>.nom-signe {
-      font-size: 14px;
+      font-size: 10px;
    }
 
    #next-prev-sign-nav>a>.date-signe {
-      font-size: 12px;
+      font-size: 8px;
    }
    
 }
