@@ -1,16 +1,20 @@
 import '../css/sideNav.css'
 import CarrousselNavigation from "./carouselNavigation"
-import useHoroscopeStore from "../storeHoroscope"
 import { Menu, SquareX } from "lucide-react"
 import { useEffect} from "react"
 
 import useStoreSideNav from "../storeSideNav"
+import useHoroscopeStore from "../storeHoroscope"
+import useStoreDevice from '../storeDevice'
+
 import { useSwipeable } from 'react-swipeable'
 
 function SideNav(){
    
    const {isNavOpen , toggleNav , closeNav , openNav} = useStoreSideNav()
    const {horoscope , currentIndex, changeCurrentIndex} = useHoroscopeStore()
+   const {device} = useStoreDevice()
+
 
    // Permet via la bibliothèque useSwipeable de fermer la sideNav
    const handlers = useSwipeable({
@@ -28,16 +32,18 @@ function SideNav(){
       closeNav()
    },[currentIndex])
 
-   function changeDefaultCurrentIndex(e,index){
+   function handleChangeCurrentIndex (e,index){
       e.preventDefault()
       changeCurrentIndex(index)
    }
 
 
    return (
-      <header className={isNavOpen ? 'open' : 'close'} {...handlers}>
-         <span className="burger-menu" onClick={toggleNav}>{!isNavOpen ? <Menu /> : <SquareX/>}</span>
-            <nav className={isNavOpen ? 'open' : 'close'}>
+      <header className={device !== 'desktop' ? (isNavOpen) ? 'open' : 'close' : ''} {...handlers}>
+         {device !== 'desktop' && (
+            <span className='burger-menu' onClick={toggleNav}>{!isNavOpen ? <Menu /> : <SquareX/>}</span>
+         )}
+            <nav>
                <img className="logo" src="/img/logo.png" alt="Logo Oraculus"/>
                   <ul>
                      <>
@@ -45,7 +51,7 @@ function SideNav(){
                            return <li key={index} className="uppercase">
                                     <a href="#" 
                                     onClick={(e)=> {
-                                       changeDefaultCurrentIndex(e,index);
+                                       handleChangeCurrentIndex (e,index);
                                     }}
                                     className={currentIndex===index ?'active' :''}>
                                        {e.nom}

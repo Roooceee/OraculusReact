@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import NextPrevSignNav from '../components/nextPrevSignNav'
 import ParseTextWithBreaks from '../components/parseTextWithBreaks'
 import '../css/horoscope.css'
 import useHoroscopeStore from "../storeHoroscope"
+import useStoreDevice from '../storeDevice'
+
 
 
 function Horoscope(){
 
    const {horoscope , currentIndex} = useHoroscopeStore()
+   const {device} = useStoreDevice()
+
    
    function dateTodayFormatFr(){
 
@@ -26,26 +30,6 @@ function Horoscope(){
       document.title = `Oraculus - Horoscope du : ${dateTodayFormatFr()}`
    })
 
-   const [sizeLess767px, SetsizeLess767px] = useState(false)
-
-   useEffect(()=>{
-
-   const handleSize = () => {
-         if(window.innerWidth <= 767){
-            SetsizeLess767px(true)
-         }
-         else {
-            SetsizeLess767px(false)
-         }
-      }
-
-   window.addEventListener("resize", handleSize);
-
-   handleSize()
-
-   return () => window.removeEventListener("resize", handleSize);
-
-   },[])
    
    return (
       
@@ -62,7 +46,7 @@ function Horoscope(){
                         <p className="uppercase date-signe">{horoscope[currentIndex]?.dates}</p>
                      </div>
 
-                  {sizeLess767px && (
+                  {device === 'mobile' && (
                      <img id="img-signe-head" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>   
                   )}
                   
@@ -107,7 +91,7 @@ function Horoscope(){
                      </div>
                   </div>
                </div>
-               {!sizeLess767px && (
+               { device !== 'mobile' && (
                   <aside>
                      <img id="img-signe" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
                   </aside>

@@ -80,8 +80,15 @@ header div a {
       z-index: 999;
    }
 
-   header .burger-menu {
+   header.close .burger-menu {
       position: fixed;
+   }
+
+   header.open .burger-menu {
+      position: absolute;
+   }
+
+   header .burger-menu {
       z-index: 1000;
       display: flex;
       color: var(--color-blue-mystic);
@@ -90,12 +97,13 @@ header div a {
       padding-left: 5px;
    }
 
-   header nav.close {
+   header.close nav {
       display: none;
    }
 
-   header nav.open {
-      min-height: 720px;
+   header.open nav {
+      height: 100dvh;
+      min-height: 640px;
       display: flex;
       z-index: 999;
    }

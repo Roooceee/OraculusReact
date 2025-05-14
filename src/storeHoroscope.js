@@ -5,6 +5,7 @@ const useHoroscopeStore = create((set, get)=>({
 
       horoscope: [],
       currentIndex: 0,
+      isReady:false,
 
       fetchDatas : async () => {
 
@@ -12,6 +13,7 @@ const useHoroscopeStore = create((set, get)=>({
           const req = await fetch('https://raw.githubusercontent.com/Roooceee/Oraculus_react/refs/heads/main/public/datas/horoscope.json')
           const res = await req.json()
           set({ horoscope: res});
+          set({isReady : true})
         }
         catch(e){
           console.log('Erreur : '+e)
