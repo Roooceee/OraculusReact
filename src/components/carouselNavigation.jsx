@@ -22,11 +22,11 @@ function CarrousselNavigation(){
 
 
       <div id='carroussel-navigation'>
-         <div>
-            <a href="#" onClick={preventDefaultPrevious}><ChevronLeft size={48} strokeWidth={1} /></a>
+         <div onClick={preventDefaultPrevious}>
+            <a href="#" ><ChevronLeft size={48} strokeWidth={1} /></a>
          </div>
-         <div>
-            <a href="#" onClick={preventDefaultNext}><ChevronRight size={48} strokeWidth={1} /></a>
+         <div onClick={preventDefaultNext}>
+            <a href="#"><ChevronRight size={48} strokeWidth={1} /></a>
          </div>
       </div>
 

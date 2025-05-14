@@ -18,3 +18,13 @@
    text-align: center;
    margin: auto;
 }
+
+#carroussel-navigation>div:hover {
+   
+   cursor: pointer;
+
+   a {
+      color: var(--color-blue-mystic);
+   }
+
+}

@@ -1,6 +1,6 @@
 header {
    height: 100dvh;
-   max-height: 100dvh;
+   max-height: 720px;
    overflow-y: auto;
    border-right: 1px solid #BFBFBF;
    border-bottom: 1px solid #BFBFBF;
@@ -47,6 +47,12 @@ header nav ul a {
    font-weight: 100;
 }
 
+header nav ul li a:hover {
+   color: var(--color-blue-mystic);
+   font-weight: 700;
+   cursor: pointer;
+}
+
 header nav ul li a.active {
    color: var(--color-black);
    font-weight: 700;
@@ -56,21 +62,28 @@ header div a {
    color: var(--color-grey-second)
 }
 
-@media (max-width:767px) {
+@media (max-width:1025px) {
+
+   header.close {
+      min-width: 40px;
+   }
 
    header.open {
       width: 300px;
       max-width: fit-content;
       position: fixed;
-      background-color: #365DE6;
-      z-index: 1;
+      background-color: white;
+      z-index: 999;
    }
 
    header .burger-menu {
-      position: fixed;
-      z-index: 3;
+      position: absolute;
+      z-index: 1000;
       display: flex;
-      color: #365DE6;
+      color: var(--color-blue-mystic);
+      cursor: pointer;
+      padding-top: 5px;
+      padding-left: 5px;
    }
 
    header nav.close {
@@ -79,11 +92,8 @@ header div a {
 
    header nav.open {
       display: flex;
-      z-index: 2;
-      /* couleur a changer et a mettre en variable */
+      z-index: 999;
    }
-
-
 }
 
 

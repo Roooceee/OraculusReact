@@ -1,12 +1,14 @@
+import { useEffect, useState } from 'react'
 import NextPrevSignNav from '../components/nextPrevSignNav'
 import ParseTextWithBreaks from '../components/parseTextWithBreaks'
 import '../css/horoscope.css'
 import useHoroscopeStore from "../storeHoroscope"
 
+
 function Horoscope(){
 
    const {horoscope , currentIndex} = useHoroscopeStore()
-  
+   
    function dateTodayFormatFr(){
 
 
@@ -19,12 +21,37 @@ function Horoscope(){
       return date+'/'+month+'/'+dateToday.getFullYear()
 
    }
+
+   useEffect(()=>{
+      document.title = `Oraculus - Horoscope du : ${dateTodayFormatFr()}`
+   })
+
+   const [sizeLess767px, SetsizeLess767px] = useState(false)
+
+   useEffect(()=>{
+
+   const handleSize = () => {
+         if(window.innerWidth <= 767){
+            SetsizeLess767px(true)
+         }
+         else {
+            SetsizeLess767px(false)
+         }
+      }
+
+   window.addEventListener("resize", handleSize);
+
+   handleSize()
+
+   return () => window.removeEventListener("resize", handleSize);
+
+   },[])
    
    return (
       
       <>
       {horoscope.length > 0 ? 
-               <div id="horoscope">
+            <div id="horoscope">
             <NextPrevSignNav/>
             <article id="horoscope-body">
                <div id="text-horoscope">
@@ -34,7 +61,11 @@ function Horoscope(){
                         <h1 className="uppercase" id="nom-signe">{horoscope[currentIndex]?.nom}</h1>  
                         <p className="uppercase date-signe">{horoscope[currentIndex]?.dates}</p>
                      </div>
-                     <img id="img-signe-head" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
+
+                  {sizeLess767px && (
+                     <img id="img-signe-head" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>   
+                  )}
+                  
                   </div>
 
                   <div id="predictions">
@@ -76,9 +107,11 @@ function Horoscope(){
                      </div>
                   </div>
                </div>
-               <aside>
-                  <img id="img-signe" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
-               </aside>
+               {!sizeLess767px && (
+                  <aside>
+                     <img id="img-signe" src={`${horoscope[currentIndex]?.imageURL}`} alt={`image du signe : ${horoscope[currentIndex]?.nom}`}/>
+                  </aside>
+               )}
             </article>
          </div>
       :''}

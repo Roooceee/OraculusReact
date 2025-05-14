@@ -1,39 +1,30 @@
 #horoscope {
+   max-width: 1440px;
    padding: 0px 0px 0px 50px;
 }
 
 #horoscope-body {
-   min-height: 110svh;
    display: grid;
    grid-template-columns: 60% auto;
-   align-items: center;
+   align-items: start;
 }
 
 #text-horoscope {
-   padding-top: 100px;
-}
-
-#img-signe-head {
-   display: none;
+   padding-top: 130px;
 }
 
 #nom-signe {
    padding-bottom: 0;
 }
 
-#horoscope #horoscope-body aside {
-   display: grid;
-   background-image: url(/img/background.png);
+#img-signe {
+   max-width: 80%;
+   margin-top: 180px;
+   background-image: url(/img/background_signe.png);
+   background-size: contain;
    background-repeat: no-repeat;
-   background-size: cover;
-   min-height: 720px;
-   height: 100%;
 }
 
-#img-signe {
-   margin: auto 0;
-   max-width: 80%;
-}
 
 #date {
    font-size: 16px;
@@ -51,33 +42,13 @@
    color: var(--color-grey-third);
 }
 
-@media (max-width:1300px) {
-   #horoscope #horoscope-body aside {
-      background-image: none;
-   }
-}
-
 @media (max-width:1025px) {
 
-   #horoscope {
-      padding: 0px 0px 0px 50px;
-   }
-
-   #horoscope-body {
-      grid-template-columns: 1fr;
-   }
-
-   #horoscope #horoscope-body aside {
-      display: none;
-   }
-
-   #img-signe {
-      margin: 0;
-   }
-
    #img-signe-head {
-      display: block;
       max-width: 200px;
+      background-image: url(/img/background_signe.png);
+      background-size: contain;
+      background-repeat: no-repeat;
    }
 
    #text-horoscope > div:nth-child(1) {
@@ -89,11 +60,17 @@
    }
 }
 
+
 @media (max-width:768px) {
 
    #horoscope {
       padding: 10px 10px 50px 20px;
    }
+
+   #horoscope-body {
+      grid-template-columns: 1fr;
+   }
+
 
    #text-horoscope {
       padding-top: 50px;
@@ -106,5 +83,6 @@
       align-items: center;
       text-align: center;
    }
+
 
 }

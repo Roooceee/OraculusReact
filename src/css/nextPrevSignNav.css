@@ -19,20 +19,24 @@
    color: var(--color-black);
 }
 
-.active {
-   color: var(--color-black);
+#next-prev-sign-nav>a:hover {
+
+   .nom-signe {
+      border-top: 2px solid var(--color-blue-mystic);
+      color: var(--color-blue-mystic);
+   }
 }
 
 @media (max-width:769px){
 
    #next-prev-sign-nav {
       position: static;
-      justify-content: space-around;
+      justify-content: center;
       text-align: center;
    }
 
    #next-prev-sign-nav a {
-      min-width: fit-content;
+      min-width: 120px;
    }
 
    #next-prev-sign-nav>a>.nom-signe {

@@ -14,6 +14,11 @@ img {
 #root {
    display: grid;
    grid-template-columns: 300px auto;
+   background-image: url(/img/background.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: 100%;
+   min-height: 100svh;
 }
 
 main {
@@ -33,6 +38,20 @@ main {
    color: var(--color-grey);
 }
 
+.overlay {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: 1;
+}
+
+.opacity {
+   background-color: rgba(0, 0, 0, 0.33);
+}
+
+
 :root {
    --font : 'Roboto';
    --font-second : 'Roboto Condensed';
@@ -40,7 +59,8 @@ main {
    --color-grey : #909090;
    --color-grey-second : #BFBFBF;
    --color-grey-third : #908F8F;
-   --color-grey-fourth : #3F3F3F ; 
+   --color-grey-fourth : #3F3F3F ;
+   --color-blue-mystic : #4A6A99 ;  
 }
 
 h1 {
@@ -50,10 +70,17 @@ h1 {
    font-family: var(--font-second);
 }
 
-@media (max-width:767px) {
+@media (max-width:1300px) {
+
+   #root {
+      background-image: none;
+   }
+}
+
+@media (max-width:1025px) {
 
    #root {
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
    }
 }
