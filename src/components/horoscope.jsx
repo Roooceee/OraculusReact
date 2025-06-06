@@ -12,7 +12,15 @@ function Horoscope(){
    const {horoscope , currentIndex} = useHoroscopeStore()
    const {device} = useStoreDevice()
 
-   
+   const predictions = [
+      {libelle : 'Amour', dataKey  : 'amour' },
+      {libelle : 'Travail', dataKey  : 'travail' },
+      {libelle : 'Argent', dataKey  : 'argent' },
+      {libelle : 'Santé', dataKey  : 'sante' },
+      {libelle : 'Famille et Amis', dataKey  : 'famille_et_amis' },
+      {libelle : 'Conseils', dataKey  : 'conseil' }
+   ]
+
    function dateTodayFormatFr(){
 
 
@@ -53,43 +61,20 @@ function Horoscope(){
                   </div>
 
                   <div id="predictions">
-                     <div>
-                        <h3 className="font-bold">Amour : </h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.amour}/>
-                        </p>
+                     
+                        {predictions.map((pred , id)=> {
+
+                           return (
+                              <div key={id}>
+                                 <h3 className="font-bold">{pred?.libelle} : </h3>
+                                 <p>
+                                    <ParseTextWithBreaks text={horoscope[currentIndex]?.[pred.dataKey]}/>
+                                 </p>
+                              </div>
+                           )
+                        })}
                      </div>
-                     <div>
-                        <h3 className="font-bold">Travail : </h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.travail}/>
-                        </p>
-                     </div>
-                     <div>
-                        <h3 className="font-bold">Argent :</h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.argent}/>
-                        </p>
-                     </div>
-                     <div>
-                        <h3 className="font-bold">Santé :</h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.sante}/>
-                        </p>
-                     </div>
-                     <div>
-                        <h3 className="font-bold">Famille et Amis :</h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.famille_et_amis}/>
-                        </p>
-                     </div>
-                     <div>
-                        <h3 className="font-bold">Conseils :</h3>
-                        <p>
-                           <ParseTextWithBreaks text={horoscope[currentIndex]?.conseil}/>
-                        </p>
-                     </div>
-                  </div>
+
                </div>
                { device !== 'mobile' && (
                   <aside>

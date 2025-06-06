@@ -32,14 +32,13 @@ function Home() {
    },[])
 
 
-  const {fetchDatas , horoscope , isReady} = useHoroscopeStore()
+  const {fetchDatas , isReady} = useHoroscopeStore()
 
   // useEffect qui permet de recuperer les Datas
   useEffect(() => {
     setTimeout(()=>{
       
       fetchDatas();
-      setIsReady(true)
 
     },1000)
   }, []);
@@ -50,7 +49,7 @@ function Home() {
         <>      
         <SideNav/>
         <main onClick={closeNav}>
-          {(isNavOpen && device != 'desktop') && (
+          {(isNavOpen && device !== 'desktop') && (
             <div className="opacity overlay" onClick={closeNav}></div>
           )}
           <Horoscope/>
