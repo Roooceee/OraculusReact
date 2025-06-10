@@ -83,8 +83,4 @@ h1 {
       display: flex;
       justify-content: start;
    }
-
-   main {
-      padding-left: 30px;
-   }
 }
