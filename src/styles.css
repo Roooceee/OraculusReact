@@ -14,15 +14,15 @@ img {
 #root {
    display: grid;
    grid-template-columns: 300px auto;
+}
+
+main {
+   max-width: 100%;
    background-image: url(/img/background.png);
    background-repeat: no-repeat;
    background-size: contain;
    background-position: 100%;
    min-height: 100svh;
-}
-
-main {
-   max-width: 100%;
 }
 
 .uppercase {
@@ -72,7 +72,7 @@ h1 {
 
 @media (max-width:1300px) {
 
-   #root {
+   main {
       background-image: none;
    }
 }
