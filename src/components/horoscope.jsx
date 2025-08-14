@@ -22,10 +22,9 @@ function Horoscope(){
    ]
 
    function dateTodayFormatFr(){
-
-
+      
       const dateToday = new Date()
-      let date = dateToday.getMonth()
+      let date = dateToday.getDate()
       let month = dateToday.getMonth()+1
       month = month < 10 ? '0'+month : month
       date = date < 10 ? '0'+date : date
