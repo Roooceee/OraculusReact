@@ -48,3 +48,11 @@
    }
    
 }
+
+@media (max-width:400px) {
+
+   #next-prev-sign-nav {
+      gap: 10px;
+   }
+
+}
