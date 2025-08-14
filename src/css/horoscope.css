@@ -86,3 +86,25 @@
 
 
 }
+
+@media (max-width:400px) {
+
+
+   #nom-signe {
+      font-size: 28px;
+   }
+
+   #date , .date-signe {
+      font-size: 14px;
+   }
+
+   h3 {
+      font-size: 14px;
+   }
+
+   #predictions > div > p > span {
+      font-size: 12px;
+   }
+
+
+}
